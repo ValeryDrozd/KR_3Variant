@@ -1,0 +1,16 @@
+(import [random [randint]])
+(setv oddNum 0)
+(setv evenNum 0)
+(setv numIterations 1000)
+
+(setv i 0)
+(while (< i numIterations)
+    (if (= (% (randint 0 99) 2) 0)
+        (setv evenNum (+ evenNum 1))
+        (setv oddNum (+ oddNum 1))
+    )
+    (setv i (+ i 1))
+)
+
+(print (+ (+ "Odd Percentage: " (str (* (/ oddNum numIterations) 100))) "%"))
+(print (+ (+ "Even Percentage: " (str (* (/ evenNum numIterations) 100))) "%"))
